@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://chatbot-backend-0rpb.onrender.com'
+const API_URL = 'https://chatbot-backend-0rpb.onrender.com';
 const App = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
