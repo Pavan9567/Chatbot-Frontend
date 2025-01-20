@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_URL = 'https://chatbot-backend-0rpb.onrender.com'
 const App = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
@@ -11,7 +12,7 @@ const App = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/messages');
+            const response = await axios.get('API_URL/api/messages');
             setMessages(response.data);
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -22,7 +23,7 @@ const App = () => {
         if (input.trim() === '') return;
 
         try {
-            const response = await axios.post('http://localhost:5000/api/messages', { user_message: input });
+            const response = await axios.post('API_URL/api/messages', { user_message: input });
             setMessages([...messages, response.data]);
             setInput('');
         } catch (error) {
