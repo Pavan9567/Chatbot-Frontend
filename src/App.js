@@ -12,7 +12,7 @@ const App = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get('https://chatbot-backend-eqn8.onrender.com/api/messages');
+            const response = await axios.get('https://chatbot-backend-pxoa.onrender.com/api/messages');
             setMessages(response.data);
         } catch (error) {
             console.error('Error fetching messages:', error);
@@ -23,7 +23,7 @@ const App = () => {
         if (input.trim() === '') return;
 
         try {
-            const response = await axios.post('https://chatbot-backend-eqn8.onrender.com/api/messages', { user_message: input });
+            const response = await axios.post('https://chatbot-backend-pxoa.onrender.com/api/messages', { user_message: input });
             setMessages([...messages, response.data]);
             setInput('');
         } catch (error) {
